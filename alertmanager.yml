@@ -1,0 +1,19 @@
+global:
+  resolve_timeout: 2h
+
+route:
+  group_by: ['alertname']
+  group_wait: 5s
+  group_interval: 10s
+  repeat_interval: 1h
+  receiver: 'slack'
+
+receivers:
+  - name: 'slack'
+    slack_configs:
+      - api_url: "https://hooks.slack.com/services/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"
+        channel: "#lottery"
+        text: "{{ range .Alerts }} {{ .Annotations.description}}\n {{end}} {{ .CommonAnnotations.username}} <{{.CommonAnnotations.link}}| click here>"
+        title: "{{.CommonAnnotations.summary}}"
+        title_link: "{{.CommonAnnotations.link}}"
+        color: "{{.CommonAnnotations.color}}"
