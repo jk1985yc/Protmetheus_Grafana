@@ -2,7 +2,6 @@ version: '3.7'
 
 services:
   mysql-exporter:
-    container_name: mysql-exporter
     image: prom/mysqld-exporter
     container_name: mysql-exporter
     hostname: mysql-exporter
