@@ -7,7 +7,7 @@ services:
     container_name: snmp-exporter
     hostname: snmp-exporter
     volumes:
-      - ./snmp_exporter:/snmp_exporter
+      - ./snmp_exporter-0.20.0.linux-amd64:/snmp_exporter
     restart: always
     ports:
       - "9116:9116"
