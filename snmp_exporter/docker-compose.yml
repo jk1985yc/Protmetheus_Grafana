@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  snmp-exporter:
+    build: ./
+    image: snmp-exporter
+    container_name: snmp-exporter
+    hostname: snmp-exporter
+    volumes:
+      - ./snmp_exporter:/snmp_exporter
+    restart: always
+    ports:
+      - "9116:9116"
