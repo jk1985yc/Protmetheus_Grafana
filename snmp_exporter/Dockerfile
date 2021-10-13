@@ -5,3 +5,4 @@ RUN mkdir /snmp_exporter
 WORKDIR /snmp_exporter
 
 CMD ["./snmp_exporter"]
+#CMD ["./snmp_exporter","--log.level=debug"] #if need check detail logs
